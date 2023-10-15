@@ -3,11 +3,10 @@ import 'package:sw2_parcial1_movil/models/ruta.dart';
 import 'package:sw2_parcial1_movil/screens/screens.dart';
 
 class AppRoutes {
-  static const initialRoute = 'checkAuth';
+  static const initialRoute = 'home';
 
   static final routes = <Ruta>[
     Ruta(name: 'Home', icon: Icons.home, route: 'home', screen: const HomeScreen()),
-    Ruta(name: 'Personas Desaparecidas', icon: Icons.people_outline, route: 'desaparecidos', screen: const HomeScreen()),
     Ruta(name: 'Mis Desaparecidos', icon: Icons.people_outline , route: 'misDesaparecidos', screen: const MiDesaparecidoScreen()),
   ];
 
