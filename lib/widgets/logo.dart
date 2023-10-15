@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sw2_parcial1_movil/theme/app_theme.dart';
 
 
 class LogoHeader extends StatelessWidget 
@@ -21,7 +22,7 @@ class LogoHeader extends StatelessWidget
         ),
         child: Align(
           alignment: Alignment.center,
-          child: Text('FRAVE', style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold, color: Color(0xff5511b0)))
+          child: Text('FINDME', style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold, color: AppTheme.primaryColor))
         ),
       ),
     );
