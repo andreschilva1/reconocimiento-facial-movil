@@ -14,6 +14,7 @@ class HomeScreen extends StatelessWidget {
         Provider.of<PersonaDesaparecidaService>(context);
 
     return Scaffold(
+      drawer: const SidebarDrawer(),
       appBar: AppBar(
         title: const Center(
           child: Center(
