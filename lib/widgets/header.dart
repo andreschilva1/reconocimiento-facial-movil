@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sw2_parcial1_movil/theme/app_theme.dart';
 
 
 class HeaderLogin extends StatelessWidget
@@ -23,7 +24,7 @@ class _HeaderLoginPainter extends CustomPainter
   void paint(Canvas canvas, Size size)
   {
     final paint = new Paint();
-    paint.color = const Color(0xff5511b0);
+    paint.color = AppTheme.primaryColor;
     paint.style = PaintingStyle.fill;
 
     final path = new Path();
@@ -63,7 +64,7 @@ class _HeaderSignUpPainter extends CustomPainter
   void paint(Canvas canvas, Size size)
   {
     final paint = new Paint();
-    paint.color = const Color(0xff5511b0);
+    paint.color = AppTheme.primaryColor;
     paint.style = PaintingStyle.fill;
 
     final path = new Path();

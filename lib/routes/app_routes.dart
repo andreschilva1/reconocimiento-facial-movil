@@ -7,7 +7,8 @@ class AppRoutes {
 
   static final routes = <Ruta>[
     Ruta(name: 'Home', icon: Icons.home, route: 'home', screen: const HomeScreen()),
-    Ruta(name: 'Personas Desaparecidas', icon: Icons.person, route: 'desaparecidos', screen: const HomeScreen()),
+    Ruta(name: 'Personas Desaparecidas', icon: Icons.people_outline, route: 'desaparecidos', screen: const HomeScreen()),
+    Ruta(name: 'Mis Desaparecidos', icon: Icons.people_outline , route: 'misDesaparecidos', screen: const MiDesaparecidoScreen()),
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {

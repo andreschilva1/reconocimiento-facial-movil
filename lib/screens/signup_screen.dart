@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sw2_parcial1_movil/screens/screens.dart';
 import 'package:sw2_parcial1_movil/services/services.dart';
+import 'package:sw2_parcial1_movil/theme/app_theme.dart';
 import 'package:sw2_parcial1_movil/utils/utils.dart';
 import 'package:sw2_parcial1_movil/widgets/widgets.dart';
 
@@ -40,8 +41,9 @@ class SingUpScreen extends StatelessWidget {
               Container(
                 margin: const EdgeInsets.all(25),
                 decoration: BoxDecoration(
-                    color: const Color(0xff5511b0),
+                    color: AppTheme.primaryColor,
                     borderRadius: BorderRadius.circular(50)),
+                    width: double.infinity,
                 child: TextButton(
                   onPressed: authService.isLoading
                       ? null
@@ -61,7 +63,7 @@ class SingUpScreen extends StatelessWidget {
                               }
                             } else {
                               if (context.mounted) {
-                                ShowAlert.displayDialog(
+                                displayDialog(
                                     context,
                                     'Error al crear el useuario',
                                     'complete bien los campos',

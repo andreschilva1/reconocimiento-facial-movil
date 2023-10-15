@@ -26,7 +26,7 @@ class TextFieldCustom extends StatelessWidget {
       decoration: InputDecoration(
         hintText: texto,
         filled: true,
-        fillColor: Color(0xffEBDCFA),
+        fillColor: Colors.white,
         prefixIcon: Icon(icono, color: Colors.grey),
         border: OutlineInputBorder(
             borderSide: BorderSide(color: Color(0xffEBDCFA)),
@@ -36,13 +36,14 @@ class TextFieldCustom extends StatelessWidget {
           borderRadius: BorderRadius.circular(50),
         ),
       ),
+      controller: controller,
+      onChanged: (value) => value,
       validator: (value) {
-        if (value!.isEmpty) {
+        if (value == null || value.isEmpty) {
           return errorMessagge;
         }
         return null;
       },
-      controller: controller,
     );
   }
 }

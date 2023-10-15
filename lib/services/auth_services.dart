@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:sw2_parcial1_movil/models/user.dart';
+import 'package:sw2_parcial1_movil/services/api_service.dart' as api_service;
 
 class AuthService extends ChangeNotifier {
-  static const String _baseUrl = 'http://10.0.2.2:3000';
+  static const String _baseUrl = api_service.baseUrl;
   static User? user;
   bool isLoading = false;
 
@@ -80,7 +81,7 @@ class AuthService extends ChangeNotifier {
   }
 
   Future<bool> checkAuth() async {
-    final String? token = await _storage.read(key: 'token');
+    final String? token = await getToken();
     print(token);
     if (token == null) {
       return false;
@@ -99,6 +100,10 @@ class AuthService extends ChangeNotifier {
 
   Future<void> logout() async {
     await _storage.deleteAll();
+  }
+
+  Future<String?> getToken() async{
+    return await _storage.read(key: 'token');
   }
 
   Future storageWrite(String idToken , int? id , String email, String nombre, String? celular) async {
