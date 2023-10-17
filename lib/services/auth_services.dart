@@ -20,7 +20,7 @@ class AuthService extends ChangeNotifier {
 
     const url = '$_baseUrl/api/login';
 
-    final response = await http.post(Uri.parse(url), body: {
+    final response =await http.post(Uri.parse(url), body: {
       'email': email,
       'password': password,
     });
@@ -86,10 +86,7 @@ class AuthService extends ChangeNotifier {
     if (token == null) {
       return false;
     }
-    const url = '$_baseUrl/api/user';
-    final response = await http.get(Uri.parse(url), headers: {
-      'Authorization': token,
-    });
+    final response  = await api_service.get('api/authUser');
     if (response.statusCode == 200) {
       return true;
     } else {

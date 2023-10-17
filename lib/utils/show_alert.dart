@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:provider/provider.dart';
 
 void displayDialog(BuildContext context, String title, String content,
@@ -99,3 +100,23 @@ Future<bool> showAlertDelete(BuildContext context) {
   );
   return completer.future;
 }
+
+ // Configure local notifications
+
+Future<void> showNotification(String message,FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin) async {
+    const AndroidInitializationSettings initializationSettingsAndroid =
+        AndroidInitializationSettings('@mipmap/ic_launcher');
+    const InitializationSettings initializationSettings =
+        InitializationSettings(android: initializationSettingsAndroid);
+    flutterLocalNotificationsPlugin.initialize(initializationSettings);
+
+    const AndroidNotificationDetails androidPlatformChannelSpecifics =
+        AndroidNotificationDetails('channel_id', 'channel_name',
+            channelDescription: 'channel_description',
+            importance: Importance.max,
+            priority: Priority.high);
+    const NotificationDetails platformChannelSpecifics =
+        NotificationDetails(android: androidPlatformChannelSpecifics);
+    await flutterLocalNotificationsPlugin.show(
+        0, 'FindMe', message, platformChannelSpecifics);
+  }

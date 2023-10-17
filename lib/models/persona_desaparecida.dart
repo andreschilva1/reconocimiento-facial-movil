@@ -48,7 +48,7 @@ class PersonaDesaparecida {
         "descripcion": descripcion,
         "edad": edad,
         "sexo": sexo,
-        "user_id": userId,
+        "userId": userId,
         "fotos": fotos,
       };
 
