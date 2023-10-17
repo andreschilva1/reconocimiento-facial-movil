@@ -14,7 +14,7 @@ class PersonaDesaparecidaService extends ChangeNotifier {
   Future<List<PersonaDesaparecida>> getpersonasDesaparecidas() async {
     try {
       final response = await api_service.get('api/personasDesaparecidas');
-      //print(response.body);
+      print(response.body);
       if (response.statusCode == 200) {
         final List<PersonaDesaparecida> personasDesaparecidas = personasDesaparecidasFromJson(response.body);
         return personasDesaparecidas;

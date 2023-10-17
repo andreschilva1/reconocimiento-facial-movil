@@ -22,7 +22,7 @@ class LogoHeader extends StatelessWidget
         ),
         child: Align(
           alignment: Alignment.center,
-          child: Text('FINDME', style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold, color: AppTheme.primaryColor))
+          child: Text('FINDME', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: AppTheme.primaryColor))
         ),
       ),
     );

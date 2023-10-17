@@ -18,3 +18,18 @@ Future<File?> pickImageFromGallery() async {
   }
 }
 
+Future<File?> pickImageFromCamera() async {
+  try {
+
+    final takeFile  = await picker.pickImage(source: ImageSource.camera);
+    if (takeFile != null) {
+      return File(takeFile.path);
+    } else {
+      return null;
+    }   
+
+  } catch (error) {
+    print('Error al tomar la imagen: $error');
+    throw 'error ocurrido en pickImageFromCamera: $error';
+  }
+}

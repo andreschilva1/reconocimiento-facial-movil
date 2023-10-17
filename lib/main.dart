@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:provider/provider.dart';
 import 'package:sw2_parcial1_movil/routes/app_routes.dart';
+import 'package:sw2_parcial1_movil/services/reconocimiento_service.dart';
 import 'package:sw2_parcial1_movil/services/services.dart';
 import 'package:sw2_parcial1_movil/theme/app_theme.dart';
 
@@ -16,7 +17,8 @@ class AppState extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => AuthService()),  
-        ChangeNotifierProvider(create: (_) => PersonaDesaparecidaService()),    
+        ChangeNotifierProvider(create: (_) => PersonaDesaparecidaService()),   
+        ChangeNotifierProvider(create: (_) => ReconocimientoService()),    
         ], 
       child:const MyApp(),
     );
